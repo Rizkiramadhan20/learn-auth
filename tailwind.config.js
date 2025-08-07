@@ -1,0 +1,68 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./app/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+    "./helper/**/*.{js,jsx,ts,tsx}",
+  ],
+  presets: [require("nativewind/preset")],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: "#f8f9fa",
+          100: "#e9ecef",
+          200: "#dee2e6",
+          300: "#ced4da",
+          400: "#adb5bd",
+          500: "#6c757d",
+          600: "#495057",
+          700: "#343a40",
+          800: "#212529",
+          900: "#181A20",
+        },
+        secondary: {
+          50: "#f8f9fa",
+          100: "#e9ecef",
+          200: "#dee2e6",
+          300: "#ced4da",
+          400: "#adb5bd",
+          500: "#6c757d",
+          600: "#495057",
+          700: "#343a40",
+          800: "#23262F",
+          900: "#1a1d24",
+        },
+        accent: {
+          primary: "#FF9228",
+          secondary: "#FF6B35",
+          tertiary: "#FF4500",
+          success: "#4CAF50",
+          warning: "#FF9800",
+          error: "#F44336",
+          info: "#2196F3",
+        },
+        text: {
+          primary: "#FFFFFF",
+          secondary: "#A1A5B7",
+          tertiary: "#6C757D",
+          disabled: "#495057",
+          inverse: "#000000",
+        },
+        status: {
+          success: "#4CAF50",
+          warning: "#FF9800",
+          error: "#F44336",
+          info: "#2196F3",
+          star: "#FFB800",
+        },
+        background: "#181A20",
+        card: "#23262F",
+        textSecondary: "#A1A5B7",
+        overlay: "rgba(0,0,0,0.35)",
+        overlayStrong: "rgba(24,26,32,0.85)",
+      },
+    },
+  },
+  plugins: [],
+};
