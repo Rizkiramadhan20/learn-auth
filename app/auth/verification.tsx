@@ -174,7 +174,7 @@ export default function Verification() {
                 setVerifying(false);
                 return;
             }
-            const res = await axios.post('https://bot-rizverse-production.up.railway.app/verify-otp', { phone: formatPhone(phone), otp });
+            const res = await axios.post(`${process.env.EXPO_API_URL}/send`), { phone: formatPhone(phone), otp });
             if (res.data.success) {
                 const q = query(collection(db, 'accounts'), where('phoneNumber', '==', phone));
                 const snap = await getDocs(q);
@@ -199,7 +199,7 @@ export default function Verification() {
         setResendPending(true);
         setResendTimer(30);
         try {
-            await axios.post('https://bot-rizverse-production.up.railway.app/send-otp', { phone: formatPhone(phone), displayName, createdAt });
+            await axios.post(`${process.env.EXPO_API_URL}/send`), { phone: formatPhone(phone), displayName, createdAt });
             Toast.show({ type: 'success', text1: 'OTP baru dikirim ke WhatsApp Anda.' });
             setOtpExpiryNow(); // Reset expiry saat resend
         } catch {
